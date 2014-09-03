@@ -1,0 +1,52 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Add a user</title>
+	<link rel="stylesheet" type="text/css" href="adduser.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#adduser').submit(function(){
+			var fname = $('#firstname').val();//.val is a "built-in jquery function"
+			var lname = $('#lastname').val();
+			var email = $('#email').val();
+			var contact = $('#contact').val();
+			$('table').append('<tr><td>' + fname + "</td><td>" +lname + "</td><td>" + email + "</td><td>" + contact + "</td><td>")
+			return false;
+	 })
+ })
+	</script>
+</head>
+
+<body>
+	<div id="container">
+		<table>
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Contact Number</th>
+				</tr>
+			</thead>
+				<tr>
+					<td>Kathy</td>
+					<td>Borne</td>
+					<td>Kathy@Kathy.com</td>
+					<td>650-555-5555</td>
+				</tr>
+			</table>
+
+			<form id="adduser">
+				<h3>Add a User:</h3>
+				<label>First Name: <input type="text" name="firstname" id="firstname"></label>
+				<label>Last Name: <input type="text" name="lastname" id="lastname"></label>
+				<label>Email: <input type="text" name="email" id="email"></label>
+				<label>Contact No.: <input type="text" name="contact" id="contact"></label>
+
+				<input type="submit" id='submit-btn' value="Add A User!">
+			</form>
+	</div>
+</body>
+</html>
